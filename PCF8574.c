@@ -28,9 +28,9 @@ void pcf8574_port_toggle(uint8_t addr){
   pcf8574_port_write(addr, (port ^ 0xFF));
 }
 
-void pcf8574_port_blink(uint8_t addr, uint8_t time){
+void pcf8574_port_blink(uint8_t addr){
   pcf8574_port_write(addr, 0xFF);
-  _delay_ms(time);
+  _delay_ms(1);
   pcf8574_port_write(addr, 0x00);
 }
 
@@ -51,8 +51,8 @@ void pcf8574_pin_toggle(uint8_t addr, uint8_t pin){
   pcf8574_port_write(addr, (port ^ (1 << pin)));
 }
 
-void pcf8574_pin_blink(uint8_t addr, uint8_t pin, uint8_t time){
+void pcf8574_pin_blink(uint8_t addr, uint8_t pin){
   pcf8574_pin_on(addr, pin);
-  _delay_ms(time);
+  _delay_ms(1);
   pcf8574_pin_off(addr, pin);
 }
