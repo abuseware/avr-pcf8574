@@ -9,8 +9,10 @@
 uint8_t pcf8574_port_read(uint8_t addr);
 void pcf8574_port_write(uint8_t addr, uint8_t state);
 void pcf8574_port_toggle(uint8_t addr);
+void pcf8574_port_blink(uint8_t addr, uint8_t time);
 
 uint8_t pcf8574_pin_read(uint8_t addr, uint8_t pin);
 void pcf8574_pin_on(uint8_t addr, uint8_t pin);
 void pcf8574_pin_off(uint8_t addr, uint8_t pin);
 void pcf8574_pin_toggle(uint8_t addr, uint8_t pin);
+void pcf8574_pin_blink(uint8_t addr, uint8_t pin, uint8_t time);
