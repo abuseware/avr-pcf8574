@@ -1,12 +1,13 @@
 CFLAGS=-Os -std=c99 -pedantic -mmcu=atmega8a -DF_CPU=8000000UL
 
-all: bin hex
+all: lib test
 
-bin:
-	avr-gcc ${CFLAGS} -II2C I2C/I2C.c PCF8574.c PCF8574_test.c -o PCF8574_test.bin
+lib:
+	avr-gcc ${CFLAGS} -c -II2C I2C/I2C.o PCF8574.c -o PCF8574.o
 
-hex:
+test: lib
+	avr-gcc ${CFLAGS} I2C/I2C.o PCF8574.o PCF8574_test.c -o PCF8574_test.bin
 	avr-objcopy -O ihex PCF8574_test.bin PCF8574_test.hex
 
-flash:
+flash: test
 	avrdude -c usbasp -p m8 -U flash:w:PCF8574_test.hex

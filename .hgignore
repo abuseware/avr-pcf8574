@@ -1,2 +1,3 @@
 .*~$
-^PCF8574_test.(bin|hex)$
+.*\.o$
+.*\.(bin|hex)$
