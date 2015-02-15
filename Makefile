@@ -11,4 +11,4 @@ test: lib
 	avr-objcopy -O ihex PCF8574_test.bin PCF8574_test.hex
 
 flash: test
-	avrdude -c usbasp -p m8 -U flash:w:PCF8574_test.hex
+	avrdude -q -c usbasp -p m8 -U flash:w:PCF8574_test.hex
