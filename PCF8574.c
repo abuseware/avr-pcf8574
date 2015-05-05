@@ -1,7 +1,6 @@
 #include <stdlib.h>
 #include <stdint.h>
 #include <util/delay.h>
-#include <I2C.h>
 
 #include "PCF8574.h"
 
@@ -24,7 +23,7 @@ uint8_t pcf8574_port_read(PCF8574 *device){
   
   i2c_start();
   i2c_write((device->addr << 1) | PCF8574_READ);
-  temp = i2c_read(I2C_ACK);
+  temp = i2c_read(ACK);
   i2c_stop();
 
   return temp;

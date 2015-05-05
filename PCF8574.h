@@ -1,4 +1,5 @@
 #pragma once
+#include <I2C.h>
 
 #define PCF8574_WRITE 0
 #define PCF8574_READ 1

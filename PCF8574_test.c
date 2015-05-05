@@ -1,10 +1,13 @@
 #include <stdint.h>
 #include <util/delay.h>
+
+#include <I2C.h>
 #include "PCF8574.h"
 
 PCF8574 *slave;
 
 int main(void){
+  i2c_speed(FAST);
   slave = pcf8574_init(0x20);
   
   while(1){
