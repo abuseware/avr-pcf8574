@@ -1,1 +1,1 @@
-I2C = [git]https://github.com/abuseware/avr-i2c
+I2C = [hg]https://bitbucket.org/licho/avr-i2c

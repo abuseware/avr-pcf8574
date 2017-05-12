@@ -1,3 +1,4 @@
+syntax: glob
 I2C
 *~
 *.o
